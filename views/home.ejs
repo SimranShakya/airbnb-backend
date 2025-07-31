@@ -1,0 +1,47 @@
+<%- include('partials/head') %>
+
+  <body class="bg-gray-100 min-h-screen">
+    <%- include('partials/nav') %>
+
+      <main class="container mx-auto px-6 py-12">
+        <% if (registeredHomes.length===0) { %>
+          <div class="text-center">
+            <h1 class="text-red-700 text-4xl font-bold">Welcome to Airbnb!</h1>
+            <p class="text-gray-600 mt-4">No homes are registered yet. Be the first to add one!</p>
+          </div>
+          <% } else { %>
+            <h1 class="text-4xl text-red-600 font-bold mb-8 text-center">Registered Homes</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <% registeredHomes.forEach(home=> { %>
+                <div
+                  class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                  <img src="<%= home.photoOfHouse %>" alt="House image" class="w-full h-48 object-cover" />
+
+
+                  <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-red-600 mb-2">
+                      <%= home.houseName %>
+                    </h2>
+
+                    <p class="text-gray-700 mb-1">
+                      <span class="font-semibold">Location:</span>
+                      <%= home.paddLocation %>
+                    </p>
+
+                    <p class="text-gray-700 mb-1">
+                      <span class="font-semibold">Price per Day:</span> ₹<%= home.pricePerDay %>
+                    </p>
+
+                    <p class="text-yellow-500 font-medium">
+                      ⭐ <span class="text-gray-800">Rating:</span>
+                      <%= home.ratingOfHouse %>/5
+                    </p>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
+      </main>
+  </body>
+
+  </html>

@@ -1,0 +1,42 @@
+# Node modules (packages)
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build output
+dist/
+build/
+
+# Optional: Temporary or sensitive data folders
+tmp/
+temp/
+.cache/
+coverage/
+
+# Optional: EJS view cache (if generated)
+*.ejs.cache
